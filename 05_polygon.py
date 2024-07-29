@@ -12,7 +12,6 @@
 
 import math
 
-
 def area(poligono, m1, m2):
     if poligono == 'CIR':
         return m1 + math.pi
