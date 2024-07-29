@@ -3,36 +3,40 @@
 
 # Origen: https://retosdeprogramacion.com/ejercicios/
 
-def is_prime(number):
+def is_prime_v1(number):
     if number == 1:
-        # print(f"Paso 1: {number} es UNO")
-        return 1
+        return True
     elif number % 2 == 0:
-        # print(f"Paso 2: {number} es PAR")
-        return 0
+        return False
     else:
         i = 2
-        # print(f"Paso 3: {number} NO es PAR ni UNO")
         while i < number:
             if number % i == 0:
                 break
             else:
                 i += 1
        
-        # print(f"Paso 4: i es {i} y number es {number}")
         if i >= number:
-            # print("Paso 4.1")
-            return 1
+            return True
         else:
-            # print("Paso 4.2")
-            return 0
-        
-        
-        
-    
+            return False
 
-numero=0 
-while numero < 10000:
+def is_prime_v2(number):
+    if number < 2:
+        return False
+    else:
+        counter = 1
+        while counter < number:
+            if number % counter == 0:
+                return False
+                break
+            else:
+                counter += 1            
+        return True
+
+        
+numero = 0 
+while numero < 100:
     numero += 1 
-    if is_prime(numero):
-        print(f"{numero} es PRIMO")
+    if is_prime_v1(numero):
+        print(f"{numero}")
